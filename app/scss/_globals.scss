@@ -1,0 +1,206 @@
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    
+    background-color: $veryDarkBlue;
+    color: $white;
+    font-size: 0.9375rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+
+
+
+}
+main {
+    display: flex;
+    flex-direction: column;
+    max-width: 20.625rem; //330px
+    background-color: $darkDesaturatedBlue;
+    border-radius: 0.625rem;
+    min-height: 50%;
+    
+
+    @include break-up(large) {
+        max-width: 69.375rem;
+        flex-direction: row;
+        text-align: left;
+
+    }
+
+}
+
+strong {
+    color: $softViolet;
+}
+
+.card_image {
+    background-image: url('/images/image-header-mobile.jpg');
+    
+    opacity: 0.5;
+    background-size: 100% 15rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+    
+    
+    min-height: 15rem;
+    
+    width: 100%;
+    border-top-left-radius: 0.625rem;
+    border-top-right-radius: 0.625rem;
+    order: 1; 
+    overflow: hidden;
+
+    @include break-up (large) {
+        min-width: 540px; //540px
+        min-height: 446px;//27.875rem;
+        max-height: 446px;
+        background-image: url('/images/image-header-desktop.jpg');
+        background-size: 100% 100%;
+        background-position:center;
+        background-repeat: no-repeat;
+        
+        border-top-right-radius: 0.625rem;
+        border-bottom-right-radius: 0.625rem;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        order: 2;
+
+    }
+     
+    &__overlay {
+        background-color: $softViolet;        
+        opacity: 0.5;
+        height: 100%;
+        min-height: 15rem;
+        width: 100%;
+        border-top-left-radius: 0.625rem;
+        border-top-right-radius: 0.625rem;
+        
+
+        @include break-up (large) {
+            border-top-right-radius: 0.625rem;
+            border-bottom-right-radius: 0.625rem;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+     }
+}
+
+
+.card_content {
+    order: 2;
+    padding: 40px 36px 40px 36px;
+     @include break-up (large) {
+         padding: 63px 120px 63px 70px; //még lhet változtatni
+     }
+     
+    h1 {
+        font-family: $Inter;
+        font-weight: $thick;
+        font-size: 1.5625rem;
+        padding: 0;
+        margin: 0 0 28px 0;
+        @include break-up(large) {
+            font-size: 1.875rem;
+            margin: 0 0 40px 0;
+        }
+        
+     }
+   
+     p {
+         font-family: $Inter;
+         font-weight: $normal;
+         line-height: 1.6;
+         color: $slightlyTransparentWhite;
+         margin: 0 0 50px 0;
+
+         @include break-up(large) {
+             //font-size:17px;
+             margin: 0 0 70px 0;
+             
+         }
+
+
+     }
+
+    @include break-up (large) {
+        order: 1;
+    }
+}
+
+.detail_container {
+
+    @include break-up (large) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        justify-content: start;
+        gap: 3rem;
+    }
+
+    h2 {
+        font-family: $Lexend;
+        font-size: 22px;
+        padding: 0;
+        margin: 0 0 0.8125rem 0;
+      /*  @include break-up (large) {
+            font-size: 24px;
+            
+        } */
+
+    }
+    p{
+        font-family: $Inter;
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin: 0 0 2rem 0;
+        @include break-up(large) {
+            font-size: 14px;
+            margin: 0;
+        }
+    }
+    &__queries {
+        
+        p{
+        margin: 0;
+        
+
+        @include break-up (large) {
+            margin: 0;
+        }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+// This is from the original file. 
+.attribution {
+ font-size: 11px;
+ text-align: center; 
+ margin-top: 1rem;
+}
+.attribution a {
+     color: hsl(227, 51%, 71%); 
+}
